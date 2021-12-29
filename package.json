@@ -1,0 +1,20 @@
+{
+  "name": "javascript_plschool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass --output-style compressed -o build/css src/scss",
+    "watch:css": "node-sass --watch src/scss -o build/css ",
+    "serve": "browser-sync start --server --files 'build/css/*.css, **/*.html'",
+    "autoprefixer": "postcss build/css/*.css --use autoprefixer --map=false -b 'last 2 versions' -d build/css",
+    "start": "run-p serve watch:css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "node-sass": "^7.0.0",
+    "npm-run-all": "^4.1.5"
+  }
+}
